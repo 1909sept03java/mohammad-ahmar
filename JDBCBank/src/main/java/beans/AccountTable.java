@@ -25,6 +25,14 @@ public class AccountTable {
 		
 	}
 
+	public AccountTable(int id2, int bid, float balnce, float dep) {
+		// TODO Auto-generated constructor stub
+		this.id = id2;
+		this.bankId = bid;
+		this.balance = balnce;
+		this.deposit = dep;
+	}
+
 	@Override
 	public String toString() {
 		return "Account [id=" + id + ", bankid=" + bankId + ", balance=" + balance + " +"

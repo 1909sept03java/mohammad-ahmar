@@ -111,6 +111,7 @@ public class SuperuserTableDAOImpl implements SuperuserDAO{
 				System.out.println(c);
 			}
 			System.out.println(); break; // move
+			case 6: updateUser(); System.out.println();
 			}
 		}
 	}
@@ -229,6 +230,43 @@ public class SuperuserTableDAOImpl implements SuperuserDAO{
 		}
 		System.out.println("User has been created");
 		System.out.println();
+	}
+	
+	public void updateUser() {
+		System.out.print("Enter id that you want to update: ");
+		Scanner s = new Scanner(System.in);
+		int id = 0;
+		id = s.nextInt();
+		
+		System.out.print("update username: ");
+		String user = s.next();
+		System.out.print("update password: ");
+		String pass = s.next();
+		System.out.print("Firstname: ");
+		String firstname = s.next();
+		System.out.print("Lastname: ");
+		String lastname = s.next();
+		System.out.print("Email: ");
+		String email = s.next();
+
+		try (Connection con = ConnectionUtil.getConnection()) {
+			String sql = "UPDATE USER_TABLE SET USER_USERNAME = ?, USER_USERPASS = ?, USER_FIRSTNAME = ?, USER_LASTNAME = ?, USER_EMAIL = ? WHERE USER_ID = ?";
+			PreparedStatement pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, user);
+			pstmt.setString(2,pass);
+			pstmt.setString(3,firstname);
+			pstmt.setString(4, lastname);
+			pstmt.setString(5,email);
+			pstmt.setInt(6,id);
+			pstmt.executeUpdate();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		System.out.println("User has been Updated");
+		System.out.println();
+		
 	}
 
 }

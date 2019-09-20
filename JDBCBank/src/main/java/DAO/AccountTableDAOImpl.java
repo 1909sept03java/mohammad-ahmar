@@ -58,8 +58,11 @@ public class AccountTableDAOImpl implements AccountTableDAO{
 				int id = rs.getInt("BANK_ACCOUNT_ID");
 				int bid = rs.getInt("USER_ID");
 				float balnce = rs.getFloat("BALANCE");
-				a = new AccountTable(id,bid,balnce);
+				float dep = rs.getFloat("DEPOSIT");
+				float ttl = dep + balnce;
+				a = new AccountTable(id,bid,ttl);
 				System.out.println(a);
+			//	System.out.println(ttl);
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -124,7 +127,7 @@ public class AccountTableDAOImpl implements AccountTableDAO{
 			case 1: viewAcct(); System.out.println(); System.out.println();break;
 			case 2: createAcct(); System.out.println();break;
 			case 3: deleteAcct();System.out.println(); System.out.println();break;
-			case 4: System.out.println("deposit/withdraw"); System.out.println();break;
+			case 4: deposit(); System.out.println("deposit/withdraw"); System.out.println();break;
 			case 5: 
 			}
 		}
@@ -188,6 +191,31 @@ public class AccountTableDAOImpl implements AccountTableDAO{
 			e.printStackTrace();	
 		}
 
+	}
+	
+	public void deposit() {
+		System.out.println("Enter your userid: ");
+		Scanner s = new Scanner(System.in);
+		int id = 0;
+		id = s.nextInt();
+		
+		System.out.println("Enter amount for deposit: ");
+		double amt;
+		amt = s.nextDouble();
+		
+		try (Connection con = ConnectionUtil.getConnection()) {
+			String sql = "UPDATE ACCOUNT_TABLE SET DEPOSIT = ? WHERE USER_ID = ?";
+			PreparedStatement pstmt = con.prepareStatement(sql);
+			pstmt.setDouble(1, amt);
+			pstmt.setInt(2,id);
+			pstmt.executeUpdate();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		System.out.println("User has deposited " + amt);
+		System.out.println();
 	}
 
 }

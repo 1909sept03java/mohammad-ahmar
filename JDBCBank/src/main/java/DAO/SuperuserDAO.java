@@ -14,6 +14,7 @@ public interface SuperuserDAO {
 	public void giveSuperUserOp();
 	public void deleteUser();
 	public void viewUser();
+	public void updateUser();
 		
 	
 }
