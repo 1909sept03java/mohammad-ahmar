@@ -59,10 +59,11 @@ public class AccountTableDAOImpl implements AccountTableDAO{
 				int bid = rs.getInt("USER_ID");
 				float balnce = rs.getFloat("BALANCE");
 				float dep = rs.getFloat("DEPOSIT");
-				float ttl = dep + balnce;
-				a = new AccountTable(id,bid,ttl);
+				//float ttl = dep + balnce;
+				a = new AccountTable(id,bid,dep);
 				System.out.println(a);
 			//	System.out.println(ttl);
+		
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -70,6 +71,8 @@ public class AccountTableDAOImpl implements AccountTableDAO{
 			e.printStackTrace();
 		}
 		System.out.println("Acct view screen: ");
+		
+		
 	}
 
 
@@ -204,7 +207,7 @@ public class AccountTableDAOImpl implements AccountTableDAO{
 		amt = s.nextDouble();
 		
 		try (Connection con = ConnectionUtil.getConnection()) {
-			String sql = "UPDATE ACCOUNT_TABLE SET DEPOSIT = ? WHERE USER_ID = ?";
+			String sql = "UPDATE ACCOUNT_TABLE SET BALANCE = ?, DEPOSIT = ? WHERE USER_ID = ?";
 			PreparedStatement pstmt = con.prepareStatement(sql);
 			pstmt.setDouble(1, amt);
 			pstmt.setInt(2,id);

@@ -97,7 +97,7 @@ public class SuperuserTableDAOImpl implements SuperuserDAO{
 		int selection = 0;
 		while(selection != 9) {
 			System.out.println("Superuser main menu: " + "\n" + "\n"  +"create user press 2" + "\n" +
-					"delete user press 3 " + "\n"  +"view specfic user press 4" + "\n"+" Press 5 to view all users" + "\n" +"exit to main menu press 9");
+					"delete user press 3 " + "\n"  +"view specfic user press 4" + "\n"+" Press 5 to view all users" + "\n"+ "update user press 6"+"\n" +"exit to main menu press 9");
 			System.out.print("Enter selection: ");
 			selection = s.nextInt();
 			switch(selection) {

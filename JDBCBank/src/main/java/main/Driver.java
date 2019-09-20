@@ -21,8 +21,8 @@ public class Driver {
 		Scanner sc = new Scanner(System.in);
 		int selection = 0;
 		while(selection != 9) {
-			System.out.println("Main menu: " + "\n" + "Login press 1" + "\n" + "regiester press 2" + "\n" +
-					"Superusers press 3 "+"\n" + "Exit press 9");
+			System.out.println("User Main menu: " + "\n" + "Login press 1" + "\n" + "regiester press 2" + "\n" +
+					"Superusers press 3 "+"\n" + "Logout press 9");
 			System.out.print("Enter selection: ");
 			selection = sc.nextInt();
 			switch(selection) {
