@@ -1,2 +1,28 @@
+body{
+    background-color: maroon;
+}
 
+.style {
+    font-family: fantasy;
+    font-size: 135%;
+    text-align: center;
+    text-orientation: unset;
+    text-emphasis-color: white;
+    color: lightgreen;
+}
 
+.btn {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+#avg {
+    color: gold;
+
+}
