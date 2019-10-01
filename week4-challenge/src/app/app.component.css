@@ -1,0 +1,38 @@
+.app {
+    background-color: transparent;
+    color: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    /*justify-content: space-around;*/
+    justify-content: space-around;
+    height: 100%;
+    width: 100%;
+}
+.app__title {
+    color: #111;
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+    flex: 0 0 auto;
+    font-size: 4rem;
+}
+.app__nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 50%;
+}
+
+.app__nav-anchor,
+.app__nav-anchor:active,
+.app__nav-anchor:hover,
+.app__nav-anchor:visited {
+    border-bottom: 3px solid transparent;
+    color: #F56262;
+    font-size: 2rem;
+    text-decoration: none;
+    transition: all ease-in-out 0.2s
+}
+.app__nav-anchor:hover {
+    color: #F94264;
+    border-bottom: 3px solid #FFF;
+}
