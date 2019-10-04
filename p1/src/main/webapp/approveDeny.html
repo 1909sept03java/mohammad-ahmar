@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Approve or deny requests</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="login">
+        <h1>Reim update</h1>
+        <form action="approveDeny" method="POST">
+          <p><input type="text" name="id" value="" placeholder="Enter id"></p> <!-- Nullpointexception fix use EXACT same name given in form for username property -->
+          <p><input type="text" name="value" value="" placeholder="Enter 1 for approval or 0 for deny"></p>
+      		
+      	
+          <p class="submit"><input type="submit" name="commit" value="update"></p> 
+        </form>
+      </div>
+
+</body>
+</html>

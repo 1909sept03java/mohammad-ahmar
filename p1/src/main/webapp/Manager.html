@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Manager</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<div class="display">
+		<h1>WELCOME MANAGER</h1> 
+	</div>
+	<!-- my info prints below -->
+	<h2>Employee functions: </h2>
+	<div class="display">
+		<h3 id="id"></h3>
+		<h3 id="username"></h3>
+		<h3 id="password"></h3>
+		<h3 id="man id"></h3>
+	</div>
+	<!-- print manager own reims here -->
+	<ol id = "manpending"></ol>
+	
+	<ol id = "manres"></ol>
+	
+	
+	<!-- buttons on pg -->
+	<input id="myinfo" type="submit" value="My info"/>
+	<input id="pending" type="submit" value="My Pending reimbursments"/>
+		<input id="resolved" type="submit" value="My Resolved reimbursments"/>
+		
+		
+	<form action="update" method="get">       <!-- takes to update.html pg -->
+	<input id="updateinfo" type="submit" value="Update info"/>
+	</form>
+	<form action = "SubmitReim" method="get" > <!-- take to servlet to run cmds -->
+		<input type="submit" value="submit reimbursment request"/>
+	</form>  
+	<hr>
+	<!-- regular functions above -->
+	<div>  <!-- added m to show manger display -->
+	<h3 id = "headm"></h3>
+	<h3 id="reim idm"></h3>
+	<h3 id="emp idm"></h3>
+		<h3 id="balancem"></h3>
+		<h3 id="detailsm"></h3>
+		<h3 id="checkm"></h3>
+		<h3 id="manage"></h3>
+		<h3 id="man res"></h3>
+		
+		</div>
+		<h1>Manager functions</h1>
+		<input id = "myEmp" type= "submit" value = "My employees pending reim">
+		<input id = "myEmpRes" type= "submit" value = "All employees resolved reim"> <!-- testing -->
+		
+		<ol id = "EmpResMan"></ol> <!-- print manger results here --> 
+		
+		<ol id = "EmpPendMan"></ol> <!-- fix this -->
+	
+	<form action = "approveDeny" method="get" > <!-- take to servlet to run cmds -->
+		<input type="submit" value="aprrove or deny reim"/>
+	</form> 
+	
+	<form action = "singleEmp" method="get" > <!-- take to servlet to run cmds -->
+		<input type="submit" value="reim from single employee"/>
+		
+	</form> 
+	<!-- manager functions all above -->
+	<hr>
+	<form action="logout" method="get">
+		<input type="submit" value="logout"/>
+	</form>
+</body>
+<script src="scripts/check.js"></script>
+<form action="viewRiem" method="get">       <!-- takes to update.html pg -->
+	<input type="submit" value="View Riembursments"/>
+	</form>	
+</html>

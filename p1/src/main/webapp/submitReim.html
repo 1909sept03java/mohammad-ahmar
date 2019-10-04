@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Submit Reimbursment request</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<h1></h1>
+	<div class="login">
+        <h1>Reimbursment request</h1>
+        <form action="SubmitReim" method="POST"> <!-- should be same name as servlet java class -->
+          <p><input type="text" name="amount" value="" placeholder="Enter amount"></p> <!-- Nullpointexception fix use EXACT same name given in form for username property -->
+          <p><input type="text" name="details" value="" placeholder="Enter details"></p>
+      		
+      	
+          <p class="submit"><input type="submit" name="commit" value="request"></p> 
+        </form>
+      </div>
+</body>
+</html>
